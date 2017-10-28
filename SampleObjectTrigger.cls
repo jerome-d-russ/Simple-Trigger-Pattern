@@ -14,40 +14,21 @@
 *   AFTER  DELETE
 *   AFTER  UNDELETE
 *
-* The framework for dispatching additional Trigger Actions has been left in place.  To activate 
-* these additional dispatch calls, un-comment the appropriate lines of code.  Before doing so, 
+* The framework for dispatching additional Trigger Actions has been left in place.  To activate
+* these additional dispatch calls, un-comment the appropriate lines of code.  Before doing so,
 * make sure that the corresponding method in the handler class has been implemented.
 *
-* IMPORTANT!  Under no circumstance should additional logic be placed here, within this Trigger 
-* definition.  Trigger logic should ONLY be implemented by the Trigger Handler class, or classes
-* called by the Trigger Handler class.
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @author         Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @modifiedBy     Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @maintainedBy   Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @version        1.0
-* @created        YYYY-MM-DD
-* @modified       YYYY-MM-DD
-* @systemLayer    Invocation
-* @see            Sample_Object__c.object
-* @see            SampleObjectTriggerHandler.class
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* vX.X            Vivek.M.Chawla@gmail.com
-* YYYY-MM-DD      Explanation of the change.  Multiple lines can be used to explain the change, but
-*                 each line should be indented till left aligned with the previous description text.
-*
-* vX.X            Vivek.M.Chawla@gmail.com
-* YYYY-MM-DD      Each change to this file should be documented by incrementing the version number,
-*                 and adding a new entry to this @changes list. Note that there is a single blank
-*                 line between each @changes entry.
+* Under no circumstance should additional logic be placed here, within this Trigger
+* definition.  Trigger logic should ONLY be implemented by the Trigger Handler
+* class, or classes called by the Trigger Handler class.
 * ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
-trigger SampleObjectTrigger on Sample_Object__c (before insert, before update, 
-                                                 before delete, after insert,  
-                                                 after update,  after delete, 
+trigger SampleObjectTrigger on Sample_Object__c (before insert, before update,
+                                                 before delete, after insert,
+                                                 after update,  after delete,
                                                  after undelete) {
   //───────────────────────────────────────────────────────────────────────────┐
-  // Instantiate the Trigger Handler, then dispatch to the correct Action  
+  // Instantiate the Trigger Handler, then dispatch to the correct Action
   // Handler Method (eg. BEFORE INSERT or AFTER UPDATE).
   //───────────────────────────────────────────────────────────────────────────┘
   //SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();

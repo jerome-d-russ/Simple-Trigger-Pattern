@@ -1,58 +1,14 @@
 /**
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┐
-* Trigger Handler Class for the "Sample Object" object (Sample_Object__c).
-*
-* This class currently defines handlers for the following Trigger Actions:
-*
-* [Template Note: Delete the Action Handlers that you are not currently implementing.]
-*
-*   BEFORE INSERT
-*   BEFORE UPDATE
-*   BEFORE DELETE
-*   AFTER  INSERT
-*   AFTER  UPDATE
-*   AFTER  DELETE
-*   AFTER  UNDELETE
-*
-* The framework for unused Action Handlers has been commented out and left in place.  To use
-* these Handlers, un-comment the appropriate blocks of code by ADDING a single forward-slash "/"
-* character to the "/*" that appears directly above the definition of the Action Handler you want
-* to activate.  Then, add your handler logic directly below the comment that says "Handler logic".
-* 
-* After implementing additional Action Handlers, make sure to un-comment the corresponding lines
-* of dispatch code in the Trigger definition.
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
 * Template Setup:
 * 1. Mass-replace Object variable names.
 *    A. Perform a case-sensitive search and replace of the following string segments:
 *       1. SObjects  <---- Target Object's Plural Variable Name (eg. "Accounts" or "SampleObjects")
 *       2. SObject   <---- Target Object's API Name (eg. "Account" or "Sample_Object__c")
 * 2. Delete "template help" sections (like this one).
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @author         Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @modifiedBy     Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @maintainedBy   Vivek M. Chawla     <Vivek.M.Chawla@gmail.com>
-* @version        1.0
-* @created        YYYY-MM-DD
-* @modified       YYYY-MM-DD
-* @systemLayer    Invocation
-* @see            Sample_Object__c.object
-* @see            SampleObjectTrigger.trigger
-* @see            TriggerHandler.class
-* ──────────────────────────────────────────────────────────────────────────────────────────────────
-* @changes
-* vX.X            Vivek.M.Chawla@gmail.com
-* YYYY-MM-DD      Explanation of the change.  Multiple lines can be used to explain the change, but
-*                 each line should be indented till left aligned with the previous description text.
-*
-* vX.X            Vivek.M.Chawla@gmail.com
-* YYYY-MM-DD      Each change to this file should be documented by incrementing the version number,
-*                 and adding a new entry to this @changes list. Note that there is a single blank
-*                 line between each @changes entry.
-* ─────────────────────────────────────────────────────────────────────────────────────────────────┘
 */
 public class SampleObjectTriggerHandler extends TriggerHandler {
   /**
+  * @description
   * ───────────────────────────────────────────────────────────────────────────────────────────────┐
   * BEFORE INSERT Handler.
   * ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -61,6 +17,9 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * ────────────────────────────────────────────────────────────────────────────────────────────────
   * @param    newSObjects    List of SObjects to be inserted.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.beforeInsert(trigger.new);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
@@ -96,12 +55,15 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * @param    updatedSObjects       List of SObjects with updated data.
   * @param    updatedSObjectsMap    Map of SObjects with updated data.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.beforeUpdate(trigger.old, trigger.oldMap, trigger.new, trigger.newMap);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
-  public void beforeUpdate(List<SObject>    oldSObjects, 
+  public void beforeUpdate(List<SObject>    oldSObjects,
                            Map<ID, SObject> oldSObjectsMap,
-                           List<SObject>    updatedSObjects, 
+                           List<SObject>    updatedSObjects,
                            Map<ID, SObject> updatedSObjectsMap) {
     //─────────────────────────────────────────────────────────────────────────┐
     // Prevent recursion. This functionality is implemented by the parent class.
@@ -114,7 +76,7 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
     // Handler logic.
     //─────────────────────────────────────────────────────────────────────────┘
     // [Add your custom handler logic here.]
-    
+
 
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
@@ -132,10 +94,13 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * @param    deletedSObjects     List of SObjects that are going to be deleted.
   * @param    deletedSObjectsMap  Map of SObjects that are going to be deleted.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.beforeDelete(trigger.old, trigger.oldMap);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
-  public void beforeDelete(List<SObject>    deletedSObjects, 
+  public void beforeDelete(List<SObject>    deletedSObjects,
                            Map<ID, SObject> deletedSObjectsMap) {
     //─────────────────────────────────────────────────────────────────────────┐
     // Prevent recursion. This functionality is implemented by the parent class.
@@ -148,8 +113,8 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
     // Handler logic.
     //─────────────────────────────────────────────────────────────────────────┘
     // [Add your custom handler logic here.]
-    
-    
+
+
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
     //─────────────────────────────────────────────────────────────────────────┘
@@ -166,10 +131,13 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * @param    newSObjects     List of SObjects that were just inserted.
   * @param    newSObjectsMap  Map of SObjects that were just inserted.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.afterInsert(trigger.new, trigger.newMap);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
-  public void afterInsert(List<SObject>     newSObjects, 
+  public void afterInsert(List<SObject>     newSObjects,
                           Map<ID, SObject>  newSObjectsMap) {
     //─────────────────────────────────────────────────────────────────────────┐
     // Prevent recursion. This functionality is implemented by the parent class.
@@ -202,12 +170,15 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * @param    updatedSObjects     List of SObjects with updated data.
   * @param    updatedSObjectsMap  Map of SObjects with updated data.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.afterUpdate(trigger.old, trigger.oldMap, trigger.new, trigger.newMap);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
-  public void afterUpdate(List<SObject>     originalSObjects, 
+  public void afterUpdate(List<SObject>     originalSObjects,
                           Map<ID, SObject>  originalSObjectsMap,
-                          List<SObject>     updatedSObjects, 
+                          List<SObject>     updatedSObjects,
                           Map<ID, SObject>  updatedSObjectsMap) {
     //─────────────────────────────────────────────────────────────────────────┐
     // Prevent recursion. This functionality is implemented by the parent class.
@@ -220,7 +191,7 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
     // Handler logic.
     //─────────────────────────────────────────────────────────────────────────┘
     // [Add your custom handler logic here.]
-    
+
 
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
@@ -238,10 +209,13 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * @param    deletedSObjects     List of SObjects that were just deleted.
   * @param    deletedSObjectsMap  Map of SObjects that were just deleted.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.afterDelete(trigger.old, trigger.oldMap);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
-  public void afterDelete(List<SObject>     deletedSObjects, 
+  public void afterDelete(List<SObject>     deletedSObjects,
                           Map<ID, SObject>  deletedSObjectsMap) {
     //─────────────────────────────────────────────────────────────────────────┐
     // Prevent recursion. This functionality is implemented by the parent class.
@@ -254,7 +228,7 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
     // Handler logic.
     //─────────────────────────────────────────────────────────────────────────┘
     // [Add your custom handler logic here.]
-    
+
 
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
@@ -271,6 +245,9 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   * ────────────────────────────────────────────────────────────────────────────────────────────────
   * @param    restoredSObjects    List of SObjects recovered from the Recycle Bin.
   * @return   void
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.afterUndelete(trigger.new);
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   /*
@@ -286,7 +263,7 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
     // Handler logic.
     //─────────────────────────────────────────────────────────────────────────┘
     // [Add your custom handler logic here.]
-    
+
 
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
@@ -297,13 +274,16 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
   /**
   * ───────────────────────────────────────────────────────────────────────────────────────────────┐
   * [Create helper methods to keep the code in your action handlers tight and easy to understand.]
-  * [All helper methods should be marked "private".] 
+  * [All helper methods should be marked "private".]
   * [Adding the @testVisible annotation to all private helper methods will facilitate Unit Tests.]
   * [Use this Method Header Comments template to document all helper methods you create.]
   * ────────────────────────────────────────────────────────────────────────────────────────────────
   * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
   * @param    NAME    DESCRIPTION (MENTION PARAMETER TYPE IN DESCRIPTION)
   * @return   TYPE    DESCRIPTION (MENTION LIKELY VALUES IN DESCRIPTION)
+  * @example
+  * SampleObjectTriggerHandler handler = new SampleObjectTriggerHandler();
+  * handler.helperMethodBoilerplate();
   * ───────────────────────────────────────────────────────────────────────────────────────────────┘
   */
   @testVisible
@@ -337,10 +317,10 @@ public class SampleObjectTriggerHandler extends TriggerHandler {
                       +'\n---->isAfterDeleteFirstRun    : '  + isAfterDeleteFirstRun
                       +'\n---->isAfterUndeleteFirstRun  : '  + isAfterUndeleteFirstRun
                       +'\n*~*');
-        }  
+        }
       }
     }
-    
+
     //─────────────────────────────────────────────────────────────────────────┐
     // All done.
     //─────────────────────────────────────────────────────────────────────────┘
